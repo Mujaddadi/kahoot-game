@@ -1,0 +1,12 @@
+@import "src/assets/styles/variables";
+
+.singleResultWrapper {
+  padding: 10px;
+  border-top: 1px solid;
+}
+
+.smallBox {
+  padding: 10px 15px;
+  background-color: $red;
+  color: white;
+}

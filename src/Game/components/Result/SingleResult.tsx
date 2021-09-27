@@ -1,11 +1,18 @@
 import React from "react";
 
-const SingleResult = () => {
+import "./SingleResult.scss";
+
+import { BoxData } from "../../types";
+
+type Props = {
+  result: BoxData;
+};
+const SingleResult = ({ result }: Props) => {
   return (
-    <div className="d-flex justify-content-between">
-      <span>B</span>
+    <div className="d-flex justify-content-between singleResultWrapper">
+      <span className="smallBox">{result.letter}</span>
       <span>2</span>
-      <span>90</span>
+      <span>{result.points}</span>
     </div>
   );
 };

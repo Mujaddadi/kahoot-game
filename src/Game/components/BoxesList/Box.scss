@@ -1,0 +1,17 @@
+@import "src/assets/styles/variables";
+
+.box {
+  padding: 50px;
+  margin: 20px;
+  background-color: $red;
+  color: white;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $red-dark;
+  }
+}
+
+.boxName {
+  font-size: 26px;
+}

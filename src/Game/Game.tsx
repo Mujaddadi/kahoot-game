@@ -11,11 +11,14 @@ import GameContext from "./gameContext";
 
 import { BoxData } from "./types";
 
+import { addToCollection } from "./utilityFunctions";
+
 const Game = () => {
   const [collection, setCollection] = useState<BoxData[]>([]);
 
   const AddToCollection = (newBoxData: BoxData) => {
-    setCollection((collection) => [...collection, newBoxData]);
+    const newCollection = addToCollection(collection, newBoxData);
+    setCollection([...newCollection]);
   };
 
   const ResetGame = () => setCollection([]);

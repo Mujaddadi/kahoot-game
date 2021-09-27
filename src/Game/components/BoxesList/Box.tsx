@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import GameContext from "../../gameContext";
+
+import { BoxData } from "../../types";
 
 import "./Box.scss";
 
 type Props = {
-  letter: string;
+  data: BoxData;
 };
 
-const Box = ({ letter }: Props) => {
+const Box = ({ data }: Props) => {
+  const { AddToCollection } = useContext(GameContext);
   return (
-    <div className="box" role="button">
-      <p className="boxName">{letter}</p>
+    <div className="box" role="button" onClick={() => AddToCollection(data)}>
+      <p className="boxName">{data.letter}</p>
     </div>
   );
 };

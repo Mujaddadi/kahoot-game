@@ -1,12 +1,14 @@
 import React from "react";
 
+import Container from "react-bootstrap/Container";
+
 import Game from "../Game";
 
 const App = () => {
   return (
-    <div>
+    <Container>
       <Game />
-    </div>
+    </Container>
   );
 };
 

@@ -11,7 +11,7 @@ const SingleResult = ({ result }: Props) => {
   return (
     <div className="d-flex justify-content-between singleResultWrapper">
       <span className="smallBox">{result.letter}</span>
-      <span>2</span>
+      <span>{result.quantity}</span>
       <span>{result.points}</span>
     </div>
   );

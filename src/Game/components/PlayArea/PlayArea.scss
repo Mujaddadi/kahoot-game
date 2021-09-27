@@ -1,0 +1,8 @@
+@import "src/assets/styles/variables";
+
+.playArea {
+  border: 1px solid;
+  min-height: 500px;
+  margin-top: 20px;
+  background-color: $violet;
+}

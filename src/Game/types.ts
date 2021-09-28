@@ -3,4 +3,6 @@ export type BoxData = {
   points: number;
   letter: string;
   quantity: number;
+  color: string;
+  bonus?: { multiple: number; amount: number };
 };

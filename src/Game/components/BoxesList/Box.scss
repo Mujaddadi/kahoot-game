@@ -3,15 +3,34 @@
 .box {
   padding: 50px;
   margin: 20px;
-  background-color: $red;
   color: white;
   transition: 0.3s;
+}
+
+.boxName {
+  font-size: 26px;
+}
+
+.red {
+  background-color: $red;
 
   &:hover {
     background-color: $red-dark;
   }
 }
 
-.boxName {
-  font-size: 26px;
+.green {
+  background-color: $green;
+
+  &:hover {
+    background-color: $green-dark;
+  }
+}
+
+.orange {
+  background-color: $orange;
+
+  &:hover {
+    background-color: $orange-dark;
+  }
 }

@@ -28,3 +28,19 @@ export const getTotal = (selectedBoxes: BoxData[]) => {
   selectedBoxes.forEach((box) => (boxesTotal += box.points * box.quantity));
   return boxesTotal;
 };
+
+export const getBoxTotal = (boxData: BoxData) => {
+  if (
+    boxData.bonus &&
+    (boxData.quantity % boxData.bonus.multiple === 0 ||
+      boxData.quantity / boxData.bonus.multiple > 1)
+  ) {
+    const totalMultiples = Math.trunc(
+      boxData.quantity / boxData.bonus.multiple
+    );
+
+    return boxData.quantity * boxData.points + totalMultiples * boxData.points;
+  }
+
+  return boxData.quantity * boxData.points;
+};

@@ -19,7 +19,7 @@ const Result = () => {
       <ResultHeading />
       <div className="results">
         {selectedBoxes.map((boxResult) => (
-          <SingleResult result={boxResult} />
+          <SingleResult result={boxResult} key={boxResult.id} />
         ))}
       </div>
 

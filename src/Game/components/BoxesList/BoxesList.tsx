@@ -10,7 +10,7 @@ const BoxesList = () => {
   return (
     <div className="d-flex boxList">
       {boxData.map((data) => (
-        <Box data={data} />
+        <Box data={data} key={data.id} />
       ))}
     </div>
   );

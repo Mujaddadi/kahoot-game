@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 
+import ErrorBoundary from "../../../common/ErrorBoundary";
+
 import SingleResult from "./SingleResult";
 import ResultHeading from "./ResultHeading";
 
@@ -14,28 +16,30 @@ const Result = () => {
   const { selectedBoxes, ResetGame } = useContext(GameContext);
 
   return (
-    <section className="mt-4">
-      <h2 className="text-center mb-4">Selected Items</h2>
-      <ResultHeading />
-      <div className="results">
-        {selectedBoxes.map((boxResult) => (
-          <SingleResult result={boxResult} key={boxResult.id} />
-        ))}
-      </div>
+    <ErrorBoundary>
+      <section className="mt-4">
+        <h2 className="text-center mb-4">Selected Items</h2>
+        <ResultHeading />
+        <div className="results">
+          {selectedBoxes.map((boxResult) => (
+            <SingleResult result={boxResult} key={boxResult.id} />
+          ))}
+        </div>
 
-      <div>Bonuses {getBonusTotal(selectedBoxes)}</div>
-      <div className="d-flex justify-content-between mt-4">
-        <div>
-          <div>Total </div>
-          <div>{getTotal(selectedBoxes)}</div>
+        <div>Bonuses {getBonusTotal(selectedBoxes)}</div>
+        <div className="d-flex justify-content-between mt-4">
+          <div>
+            <div>Total </div>
+            <div>{getTotal(selectedBoxes)}</div>
+          </div>
+          <div>
+            <Button variant="success" onClick={ResetGame}>
+              New Game
+            </Button>
+          </div>
         </div>
-        <div>
-          <Button variant="success" onClick={ResetGame}>
-            New Game
-          </Button>
-        </div>
-      </div>
-    </section>
+      </section>
+    </ErrorBoundary>
   );
 };
 

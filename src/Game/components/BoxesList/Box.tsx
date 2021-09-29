@@ -12,11 +12,14 @@ type Props = {
 
 const Box = ({ data }: Props) => {
   const { AddToCollection } = useContext(GameContext);
+
+  const handleAddToCollection = () => AddToCollection(data);
+
   return (
     <div
       className={`box ${data.color}`}
       role="button"
-      onClick={() => AddToCollection(data)}
+      onClick={handleAddToCollection}
     >
       <p className="boxName">{data.letter}</p>
     </div>

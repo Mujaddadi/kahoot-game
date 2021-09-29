@@ -44,3 +44,25 @@ export const getBoxTotal = (boxData: BoxData) => {
 
   return boxData.quantity * boxData.points;
 };
+
+export const getBonusTotal = (selectedBoxes: BoxData[]) => {
+  let totalBonus = 0;
+
+  for (let index = 0; index < selectedBoxes.length; index += 1) {
+    const currentBoxData = selectedBoxes[index];
+    if (currentBoxData.bonus) {
+      if (
+        currentBoxData.quantity % currentBoxData.bonus.multiple === 0 ||
+        currentBoxData.quantity / currentBoxData.bonus.multiple > 1
+      ) {
+        const totalMultiples = Math.trunc(
+          currentBoxData.quantity / currentBoxData.bonus.multiple
+        );
+
+        totalBonus += totalMultiples * currentBoxData.points;
+      }
+    }
+  }
+
+  return totalBonus;
+};

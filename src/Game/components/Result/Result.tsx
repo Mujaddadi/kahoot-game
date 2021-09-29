@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import SingleResult from "./SingleResult";
 import ResultHeading from "./ResultHeading";
 
-import { getTotal } from "../../utilityFunctions";
+import { getTotal, getBonusTotal } from "../../utilityFunctions";
 
 import GameContext from "../../gameContext";
 
@@ -23,7 +23,7 @@ const Result = () => {
         ))}
       </div>
 
-      <div>Bonuses 30</div>
+      <div>Bonuses {getBonusTotal(selectedBoxes)}</div>
       <div className="d-flex justify-content-between mt-4">
         <div>
           <div>Total </div>

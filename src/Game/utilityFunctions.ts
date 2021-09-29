@@ -27,7 +27,7 @@ export const addToCollection = (
 
 export const getTotal = (selectedBoxes: BoxData[]) => {
   let boxesTotal = 0;
-  selectedBoxes.forEach((box) => (boxesTotal += box.points * box.quantity));
+  selectedBoxes.forEach((box) => (boxesTotal += getBoxTotal(box)));
   return boxesTotal;
 };
 

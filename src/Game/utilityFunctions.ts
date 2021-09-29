@@ -35,7 +35,7 @@ export const addToCollection = (
  * This is to get the individual box total including bonus
  */
 export const getBoxTotal = (boxData: BoxData) => {
-  // If the remainder of box quantity and the bonus multiple is zero or there can be multiple bonus factors,
+  // If the remainder of box quantity and the bonus multiple is zero or there are multiple bonus factors,
   // add the bonus to totalMultiples
   if (
     boxData.bonus &&
@@ -70,14 +70,15 @@ export const getBonusTotal = (selectedBoxes: BoxData[]) => {
 
   for (let index = 0; index < selectedBoxes.length; index += 1) {
     const currentBoxData = selectedBoxes[index];
+    const currentBoxBonusData = currentBoxData.bonus;
 
-    if (currentBoxData.bonus) {
+    if (currentBoxBonusData) {
       if (
-        currentBoxData.quantity % currentBoxData.bonus.multiple === 0 ||
-        currentBoxData.quantity / currentBoxData.bonus.multiple > 1
+        currentBoxData.quantity % currentBoxBonusData.multiple === 0 ||
+        currentBoxData.quantity / currentBoxBonusData.multiple > 1
       ) {
         const totalMultiples = Math.trunc(
-          currentBoxData.quantity / currentBoxData.bonus.multiple
+          currentBoxData.quantity / currentBoxBonusData.multiple
         );
 
         totalBonus += totalMultiples * currentBoxData.points;

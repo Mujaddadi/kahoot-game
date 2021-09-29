@@ -2,7 +2,13 @@
 
 .playArea {
   border: 1px solid;
-  min-height: 500px;
+  min-height: 525px;
   margin-top: 20px;
   background-color: $violet;
+}
+
+@media only screen and (max-width: 500px) {
+  .playArea {
+    min-height: 400px;
+  }
 }

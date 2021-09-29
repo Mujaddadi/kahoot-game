@@ -1,3 +1,32 @@
+@import "src/assets/styles/variables";
+
 .results {
   height: 380px;
+}
+
+.totalResultSection {
+  border-top: 1px solid $gray;
+  padding: 10px 0;
+}
+
+.bonusSection {
+  border-top: 1px solid $gray;
+  padding: 10px 0;
+  color: $violet;
+}
+
+.totalSection {
+  font-size: 18px;
+}
+
+.bold {
+  font-weight: bold;
+  color: $violet;
+}
+
+@media only screen and (max-width: 765px) {
+  .results {
+    height: auto;
+    margin-bottom: 50px;
+  }
 }

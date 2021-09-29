@@ -26,10 +26,13 @@ const Result = () => {
           ))}
         </div>
 
-        <div>Bonuses {getBonusTotal(selectedBoxes)}</div>
-        <div className="d-flex justify-content-between mt-4">
-          <div>
-            <div>Total </div>
+        <section className="py-2 bonusSection">
+          <span className="bold">&#x1F490; Total bonus earned = </span>
+          {getBonusTotal(selectedBoxes)}
+        </section>
+        <section className="d-flex justify-content-between mt-3 totalResultSection">
+          <div className="totalSection">
+            <div className="bold">Total Points</div>
             <div>{getTotal(selectedBoxes)}</div>
           </div>
           <div>
@@ -37,7 +40,7 @@ const Result = () => {
               New Game
             </Button>
           </div>
-        </div>
+        </section>
       </section>
     </ErrorBoundary>
   );

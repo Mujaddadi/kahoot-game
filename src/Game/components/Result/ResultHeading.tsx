@@ -6,7 +6,7 @@ const ResultHeading = () => {
   return (
     <header className="d-flex justify-content-between resultHeading">
       <span>Item</span>
-      <span>QTY</span>
+      <span className="heading">QTY</span>
       <span>Score</span>
     </header>
   );

@@ -4,11 +4,11 @@ import "./ResultHeading.scss";
 
 const ResultHeading = () => {
   return (
-    <div className="d-flex justify-content-between resultHeading">
+    <header className="d-flex justify-content-between resultHeading">
       <span>Item</span>
       <span>QTY</span>
       <span>Score</span>
-    </div>
+    </header>
   );
 };
 

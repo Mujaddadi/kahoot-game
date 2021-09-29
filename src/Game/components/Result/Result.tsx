@@ -14,7 +14,7 @@ const Result = () => {
   const { selectedBoxes, ResetGame } = useContext(GameContext);
 
   return (
-    <div className="mt-4">
+    <section className="mt-4">
       <h2 className="text-center mb-4">Selected Items</h2>
       <ResultHeading />
       <div className="results">
@@ -35,7 +35,7 @@ const Result = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

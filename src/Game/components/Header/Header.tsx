@@ -6,12 +6,12 @@ import "./Header.scss";
 
 const Header = () => {
   return (
-    <div>
+    <header>
       <div className="d-flex headerWrapper">
         <img src={Logo} alt="kahoot logo" className="logo" />
         <h1 className="flex-grow-1 heading">Collect Points</h1>
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -6,9 +6,9 @@ import "./PlayArea.scss";
 
 const PlayArea = () => {
   return (
-    <div className="playArea">
+    <section className="playArea">
       <BoxesList />
-    </div>
+    </section>
   );
 };
 

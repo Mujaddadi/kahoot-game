@@ -1,10 +1,12 @@
+import cloneDeep from "lodash/cloneDeep";
+
 import { BoxData } from "./types";
 
 export const addToCollection = (
   selectedBoxes: BoxData[],
   selectedBox: BoxData
 ) => {
-  let selectedBoxesCopy = selectedBoxes.slice();
+  let selectedBoxesCopy = cloneDeep(selectedBoxes);
 
   if (!selectedBoxesCopy.length) {
     selectedBoxesCopy.push(selectedBox);
